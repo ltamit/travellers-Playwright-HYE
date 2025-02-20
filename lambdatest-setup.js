@@ -8,8 +8,8 @@ const capabilities = {
   'browserVersion': 'latest',
   'LT:Options': {
     'platform': process.env.HYPEREXECUTE_PLATFORM,
-    'build': 'Playwright HyperExecute Build',
-    'name': 'Playwright HyperExecute Test',
+    'build': 'Travellers - Playwright Demo',
+    'name': 'Travellers -Playwright Test',
     'user': process.env.LT_USERNAME,
     'accessKey': process.env.LT_ACCESS_KEY,
     // 'network': true,

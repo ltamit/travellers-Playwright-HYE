@@ -2,7 +2,7 @@ const { test } = require('../lambdatest-setup')
 const { expect } = require('@playwright/test')
 
 test.describe('PlayWright Vanilla JS - 3', () => {
-  test('Navigate PlayWright Documentation', async ({ page }) => {
+  test('Make Payment', async ({ page }) => {
     await page.setViewportSize({ width: 1920, height: 1080 });
     await page.goto('https://playwright.dev/');
     await expect(page).toHaveTitle(/Playwright/);

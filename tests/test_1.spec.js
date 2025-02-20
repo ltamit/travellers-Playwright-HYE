@@ -2,10 +2,16 @@ const { test } = require('../lambdatest-setup')
 const { expect } = require('@playwright/test')
 
 test.describe('PlayWright Vanilla JS - 1', () => {
-  test('Navigate PlayWright Documentation', async ({ page }) => {
+  test('Claim & Triage', async ({ page }) => {
     await page.setViewportSize({ width: 1920, height: 1080 });
     await page.goto('https://playwright.dev/');
+    
+    // Correct assertion
     await expect(page).toHaveTitle(/Playwright/);
+    
+    // Deliberate incorrect assertion to make the test fail
+    await expect(page).toHaveTitle(/WrongTitle/); // This will fail
+
     await expect(page.locator('text=Get Started').first()).toHaveAttribute('href', '/docs/intro');
     await page.click('text=Get Started');
     await expect(page.locator('text=Installation').first()).toBeVisible();
